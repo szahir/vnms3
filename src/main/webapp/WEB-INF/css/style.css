@@ -1,0 +1,182 @@
+#body{
+	background-color:#FFFFFF;
+}
+
+#css_header{
+	height:94px;
+	background-color:#5BC6C6;
+	width:100%;
+	color: #FFFFFF;
+	float:left;
+	font-family:"Times New Roman", Times, serif;
+	}
+
+#css_main_menu{
+		font-family:Georgia, "Times New Roman", Times, serif;
+		}
+		
+#css_main_menu ul{
+	text-align: right;
+}
+
+#css_main_menu li{
+	display:inline;
+}
+	
+#css_main_menu li a
+{
+	color:#EEEEEE;
+	text-decoration:none;
+	padding: 0px 20px 0px 0px;
+}
+
+#css_main_menu li a:hover{
+	color:#FFFFFF;
+}
+
+#css_menu{
+	background-color:#666666;
+	float:left;
+	width:100%;
+	text-align: center;
+	margin-top: 1px;
+	margin-bottom:15px;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	position:relative;
+}
+
+#css_menu li{
+	display:inline;
+	width:15%;
+}
+
+#css_menu li a{
+	text-decoration: none;
+	color:#EEEEEE;
+	width:100%;
+	padding:30px;
+}
+
+#css_menu li a:hover{
+	color:#FFFFFF;
+}
+
+#css_menu li ul {   
+display:none; 
+position:absolute; 
+top: 50px;
+left: 22%;
+}
+
+#css_menu li:hover ul{
+display:block; 
+background-color:#5BC6C6;  
+padding-left:0px;
+padding-right:0px;
+} 
+
+#css_menu li ul li{ 
+clear:both; 
+border-style:none;
+display:block;
+width:200px;
+padding-top:10px;
+padding-bottom:10px;
+}
+
+#css_menu li ul li a{
+	color:#EEEEEE;
+}
+
+#content
+{
+	background-color:#EEEEEE;
+}
+
+#css_footer{
+	background-color: #666666;
+	text-align: center;
+	color:#FFFFFF;
+	height:20px;
+}
+
+#css_footer a{
+	text-decoration:none;
+	color:#FFFFFF;
+	}
+
+#Layer1 {
+	position:absolute;
+	width:200px;
+	height:70px;
+	z-index:1;
+	left: 1%;
+	top: 5px;
+}
+
+#Layer2 {
+	position:absolute;
+	width:50%;
+	height:70px;
+	z-index:1;
+	left: 13%;
+	top: 30px;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-size:28px;
+	color:#FFFFFF;
+}
+
+
+#Layer3 {
+	position:absolute;
+	width:200px;
+	height:70px;
+	z-index:1;
+	left: 83%;
+	top: 18px;
+	right:10px;
+	color: #FFFFFF;
+	font-size: 13px;
+	font-family:Georgia, "Times New Roman", Times, serif;
+}
+
+#Layer4 {
+	position: absolute;
+	width:100%;
+	z-index:1;
+	right: 10px;
+	top:60px;
+}
+
+#Layer3 label a{
+	color:#FFFFFF;
+	margin: auto;
+	text-decoration:none;
+}
+
+
+.label_alarm{
+	font-weight:bold;
+	color: #5BC6C6;
+	margin: 15px;
+	font-size:18px;
+	font-family:"Times New Roman", Times, serif;
+}
+
+.alarm_link
+{
+	margin: auto 8px auto 15px;
+}
+
+.alarm_link a
+{
+	text-decoration:none;
+	color: #006633;
+}
+
+#action
+{
+	margin: auto 30px auto 15px;
+	padding: 0px 30px 50px 30px;
+}
+

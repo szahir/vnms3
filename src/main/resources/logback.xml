@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>   
+<configuration scan="true"> 
+  <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender"> 
+   <file>logs/${application-name}.log</file>  
+    <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy"> 
+      <fileNamePattern>logs/${application-name}.%i.log.zip</fileNamePattern> 
+      <minIndex>1</minIndex> 
+      <maxIndex>3</maxIndex> 
+    </rollingPolicy> 
+ 
+    <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy"> 
+      <maxFileSize>1KB</maxFileSize> 
+    </triggeringPolicy> 
+    <encoder> 
+     <pattern>%date{dd-MM-yyyy HH:mm:ss.SSS } [%thread] [%-5level] : %msg%n</pattern>   
+    </encoder> 
+  </appender> 
+  <appender name="APPSERVER-FILE" class="ch.qos.logback.core.rolling.RollingFileAppender"> 
+   <file>logs/appserver.log</file>  
+    <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy"> 
+      <fileNamePattern>logs/appserver.%i.log.zip</fileNamePattern> 
+      <minIndex>1</minIndex> 
+      <maxIndex>3</maxIndex> 
+    </rollingPolicy> 
+ 
+    <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy"> 
+      <maxFileSize>1KB</maxFileSize> 
+    </triggeringPolicy> 
+    <encoder> 
+     <pattern>%date{dd-MM-yyyy HH:mm:ss.SSS } [%thread] [%-5level] : %msg%n</pattern>   
+    </encoder> 
+  </appender> 
+  <logger name="appserver_logger" level="DEBUG" additivity="false">
+        <appender-ref ref="APPSERVER-FILE"/>
+    </logger>       
+  <root level="WARN"> 
+    <appender-ref ref="FILE" /> 
+  </root> 
+</configuration>

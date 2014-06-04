@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.cbnl.dbabstractionlayer.AlarmObject" table="alarms">
+		<meta attribute="class-description">
+			This class contains the alarms detail.
+		</meta>
+		<id name="alarm_id" type="int" column="alarmid">
+		</id>
+		<property name="alr_severity" column="severity" type="int" />
+		<property name="alr_source" column="nodelabel" type="string" />
+		<property name="alr_date" column="lasteventtime" type="timestamp" />
+		<property name="alr_logmsg" column="logmsg" type="string" />
+	</class>
+	
+	<sql-query name="showAllAlarms">
+	<return alias="alarms" class="com.cbnl.dbabstractionlayer.AlarmObject"/>
+	<![CDATA[SELECT a.alarmid , a.severity , a.lasteventtime , n.nodelabel , a.logmsg FROM alarms a , node n WHERE n.nodeid = a.nodeid]]>
+    </sql-query>
+	
+	<sql-query name="findbysource">
+	<return alias="alarms" class="com.cbnl.dbabstractionlayer.AlarmObject"/>
+	<![CDATA[SELECT alarmid , severity , lasteventtime , nodelabel , logmsg FROM alarms , node WHERE nodelabel ILIKE :nodelabel]]>
+    </sql-query>
+    
+    <sql-query name="findbylogmsg">
+	<return alias="alarms" class="com.cbnl.dbabstractionlayer.AlarmObject"/>
+	<![CDATA[SELECT alarmid , severity , lasteventtime , nodelabel , logmsg FROM alarms , node WHERE logmsg ILIKE :logmsg]]>
+    </sql-query>
+	
+	<sql-query name="findbyseverity">
+	<return alias="alarms" class="com.cbnl.dbabstractionlayer.AlarmObject"/>
+	<![CDATA[SELECT alarmid , severity , lasteventtime , nodelabel , logmsg FROM alarms , node WHERE severity = :severity]]>
+    </sql-query>
+	
+	<sql-query name="findbydate">
+	<return alias="alarms" class="com.cbnl.dbabstractionlayer.AlarmObject"/>
+	<![CDATA[SELECT alarmid , severity , lasteventtime , nodelabel , logmsg FROM alarms , node WHERE lasteventtime between :starttime and :lasttime]]>
+    </sql-query>
+	
+</hibernate-mapping>
